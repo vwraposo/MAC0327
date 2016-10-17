@@ -1,5 +1,6 @@
-x=1
-for a in 01 02 03 04 05 06 07 08 09 10;
+x=11
+mkdir 9298020-batch2
+for a in 11 12 13 14 15 16 17 18;
 do
     cd Aula$x
     let "x=$x+1"
@@ -7,8 +8,8 @@ do
     do
         if [ -f $i.cpp ];
         then
-            mkdir ../9298020-batch1/9298020-A$a-P$i
-            cp $i.cpp ../9298020-batch1/9298020-A$a-P$i
+            mkdir ../9298020-batch2/9298020-A$a-P$i
+            cp $i.cpp ../9298020-batch2/9298020-A$a-P$i
         fi
     done 
     cd ../
