@@ -36,7 +36,6 @@ int main () {
         pii a = *it++;
         pii b = *it++;
         pii c = *it;
-        int freq = max (a.ff, max (b.ff, c.ff));
 
         if (c.ss < b.ss) swap (b, c);
         if (b.ss < a.ss) swap (a, b);
@@ -44,27 +43,25 @@ int main () {
 
         //cout << a.ss<< ":" << a.ff << "  " << b.ss << ":" << b.ff << "  " << c.ss << ":" << c.ff << "  " << freq << endl;
 
-        for (int i = 0; i < -freq; i++) {
-            out[ans][0] = c.ss;
-            out[ans][1] = b.ss;
-            out[ans++][2] = a.ss;
-        }
+        out[ans][0] = c.ss;
+        out[ans][1] = b.ss;
+        out[ans++][2] = a.ss;
 
 
         balls.erase (a);
         balls.erase (b);
         balls.erase (c);
 
-        if (a.ff - freq != 0) {
-            a.ff -= freq;
+        if (a.ff + 1 != 0) {
+            a.ff++;
             balls.insert (a);
         }
-        if (b.ff - freq != 0) {
-            b.ff -= freq;
+        if (b.ff + 1 != 0) {
+            b.ff++;
             balls.insert (b);
         }
-        if (c.ff - freq != 0) {
-            c.ff -= freq;
+        if (c.ff + 1 != 0) {
+            c.ff++;
             balls.insert (c);
         }
     }
