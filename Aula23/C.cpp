@@ -11,13 +11,14 @@ using namespace std;
 
 typedef long long ll;
 typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 
 const int MAX = 10000;
 
 pii points[MAX];
 int n;
 
-int cross (pii p, pii r) {
+ll cross (pll p, pll r) {
     return r.ff*p.ss - r.ss*p.ff;
 }
 

@@ -27,7 +27,7 @@ struct no operator+ (struct no a, struct no b) {
     res.sum = a.sum + b.sum;
     res.prefixSum = max (a.prefixSum, a.sum + b.prefixSum);
     res.sufixSum = max (b.sufixSum, b.sum + a.sufixSum);
-    res.ans = max (res.prefixSum, max (res.sufixSum, max (a.ans, b.ans)));
+    res.ans = max (a.sufixSum + b.prefixSum, max (a.ans, b.ans));
     return res;
 }
     
